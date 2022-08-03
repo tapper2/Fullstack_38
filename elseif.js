@@ -1,10 +1,10 @@
 var a = 20;
-var b = 20;
+var b = 22;
 
 if (a > b) {
-	console.log("A");
+  console.log("A");
 } else if (b > a) {
-	console.log("B");
+  console.log("B");
 } else if (a == b) {
-	console.log("equals");
+  console.log("equals");
 }
