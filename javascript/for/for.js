@@ -29,11 +29,11 @@ var smallerThen50 = num < 50 ? 'smaller' : 'bigger'
 
 console.log(smallerThen50)
 
-//var i = 0
+var i = 0
 
-// for (i=0;i<= 10;i+=1) {
-//   console.log(i);
-// }
+for (i = 0; i <= 10; i += 1) {
+  if (i != 7) console.log(i)
+}
 
 // for (i = 1; i <= 10000; i++) {
 //   if (i % 2 == 0) {
