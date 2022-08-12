@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="file.js"></script>
+
+    <script>
+       console.log(todos);
+
+       for(i=0;i<todos.length;i++){
+        createDiv(todos[i])
+       }
+
+       function createDiv(ob){
+            var comp = ob.completed ? 'כן' : 'לא';
+            console.log(ob.title + " : " + ob.id  + " : " + comp);
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

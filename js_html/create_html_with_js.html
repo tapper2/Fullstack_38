@@ -1,0 +1,74 @@
+<!-- 
+    // צור לולאת FOR על מערך names
+    // קרא לפונקציה שמדפיסה DIV
+    // הדפס את הערך
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div>
+        "Hello from 0" 
+    </div> 
+    <div>
+        "Hello from 1" 
+    </div> 
+    <div>
+        "Hello from 2" 
+    </div> 
+    <div>
+        "----------------------------------------------" 
+    </div> 
+    <div>
+        "Hello from 0" 
+    </div> 
+    <div>
+        "Hello from 1" 
+    </div>  -->
+    
+    <script>
+        var mainDV = "";
+        var names = ['a','b','c','d','e','f'];
+
+        function createDivToHTML(str){
+            mainDV =  document.createElement("div");
+            mainDV.innerHTML = "Hello from " + str;
+            document.body.appendChild(mainDV);
+
+            // mainDV.className = "mainDvClass";
+            // var childDV = document.createElement("div");
+            // childDV.innerHTML = "childDV";
+            // document.body.appendChild(childDV);
+            // mainDV.appendChild(childDV);
+        }
+        
+         createDivToHTML(0);
+         createDivToHTML(1);
+         createDivToHTML(2);
+         createDivToHTML(3);
+         createDivToHTML(4);
+         createDivToHTML(5);
+
+
+         createDivToHTML("----------------------------------------------");
+
+         for(var i=0; i<names.length;i++)
+        {
+            createDivToHTML(i)
+           console.log(i)
+        }
+        // createDivToHTML("a");
+        // createDivToHTML("a");
+    
+
+    </script>
+</body>
+</html>

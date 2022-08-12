@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abc</title>
+</head>
+<body>
+    
+
+
+    
+    <script>
+        var random;
+
+    
+        // for(i=0;i<3;i++)
+        // {
+        //     var name = prompt('Please eneter name : ');
+        // }
+
+       
+        for(i=0;i<100;i++){
+            random = Math.floor(Math.random()*100);
+            createDiv(random);
+
+            // if(random<50)
+            // {
+            //     continue; break;
+            // }
+        }
+       
+        function createDiv(n){
+            if(n<50)
+            return;
+
+            var mainDV =  document.createElement("div");
+            mainDV.innerHTML = "Name is : " + n;
+            document.body.appendChild(mainDV);
+        }
+
+        
+    </script>
+</body>
+</html>
