@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../json/todosJson.js"></script>
+    <title>Todos</title>
+    <style>
+      .titleDVCss {
+        font-size: 30px;
+      }
+
+      .hrDvCss {
+        background-color: yellow;
+        height: 1px;
+        margin: 7px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var titleDV = ''
+      var hrDV = ''
+
+      for (var i = 0; i < todos.length; i++) {
+        printTitle(todos[i].title)
+      }
+
+      function printTitle(title) {
+        titleDV = document.createElement('div')
+        titleDV.innerHTML = title
+        titleDV.className = 'titleDVCss'
+        document.body.appendChild(titleDV)
+        createHR()
+      }
+
+      function createHR() {
+        hrDV = document.createElement('hr')
+        hrDV.className = 'hrDvCss'
+        document.body.appendChild(hrDV)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .cardContainer {
+        border: 1px solid gray;
+        margin-top: 10px;
+        width: 200px;
+        padding: 10px;
+      }
+
+      .cardId {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .titleId {
+        font-size: 15px;
+        font-weight: 200;
+        margin-top: 5px;
+      }
+
+      .userId {
+        font-size: 15px;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cardsContainer">
+      <!-- <div class="cardContainer">
+        <div class="userId">12</div>
+        <div class="cardId">34</div>
+        <div class="titleId">56</div>
+      </div> -->
+    </div>
+
+    <script src="../json/todosJson.js"></script>
+    <script>
+      var printToHtml = ''
+
+      for (var i = 0; i < todos.length; i++) {
+        printTitle(todos[i])
+      }
+
+      function printTitle(todo) {
+        printToHtml += '<div class="cardContainer">'
+        printToHtml += '<div class="userId">UserId :' + todo.userId + '</div>'
+        printToHtml += '<div class="cardId">Id :' + todo.id + '</div>'
+        printToHtml += '<div class="titleId">Title :' + todo.title + '</div>'
+        printToHtml += '</div>'
+
+        //     printToHtml +=
+        //       `<div class="cardContainer">
+        //     <div class="userId">` +
+        //       todo.userId +
+        //       `</div>
+        //     <div class="cardId">` +
+        //       todo.id +
+        //       `</div>
+        //     <div class="titleId">` +
+        //       todo.title +
+        //       `</div>
+        //   </div>`
+      }
+
+      cardsContainer.innerHTML = printToHtml
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos</title>
+    <script src="../json/todosJson.js"></script>
+
+    <style>
+      .titleDV {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="containerId"></div> -->
+    <!-- <div class="titleDV">delectus aut autem</div>
+      <hr class="" /> -->
+
+    <!-- <div style="border: 1px solid gray; margin-top: 10px">
+            <div class="userID">userID</div>
+            <div class="titleDV">title</div>
+         </div>
+
+      <div style="border: 1px solid gray; margin-top: 10px">
+        <div class="userID">userID</div>
+        <div class="titleDV">title</div>
+      </div>
+
+      <div style="border: 1px solid gray; margin-top: 10px">
+        <div class="userID">userID</div>
+        <div class="titleDV">title</div>
+      </div> -->
+
+    <script>
+      var printToHtml = ''
+      for (var i = 0; i < todos.length; i++) {
+        printTitle(todos[i].title)
+      }
+
+      function printTitle(title) {
+        printToHtml = "<div class='titleDV'>" + title + '</div>'
+        createHR()
+      }
+
+      function createHR() {
+        printToHtml += '<hr class="hrDvCss"/>'
+      }
+
+      //containerId.innerHTML = printToHtml
+      document.body.innerHTML = printToHtml
+    </script>
+  </body>
+</html>
