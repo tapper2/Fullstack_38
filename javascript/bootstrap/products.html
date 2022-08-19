@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .HeaderCl {
+        font-size: 40px;
+      }
+
+      .rowDV {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="../json/posts.js"></script>
+    <script>
+      var Container = '<div class="containerCl" id="containrDV"></div>'
+      document.body.innerHTML += Container
+
+      containrDV.innerHTML += '<div class="rowDV"> This is header </div><hr>'
+      containrDV.innerHTML += '<div class="rowDV"> This is Buttons </div><hr>'
+      containrDV.innerHTML += '<div class="rowDV" id="productsDV">  </div><hr>'
+      containrDV.innerHTML += '<div class="rowDV"> This is Footer </div><hr>'
+
+      for (var i = 0; i < albums.length; i++) {
+        BuildAlbum(albums[i])
+      }
+
+      function BuildAlbum(album) {
+        var AlbumString = ''
+        AlbumString +=
+          '<div class="card" style="width: 18rem; margin: 10px; border: 1px solid gray">'
+        AlbumString +=
+          '<img src="' + album.url + '" class="card-img-top" title="123455" />'
+        AlbumString += '<div class="card-body">'
+        AlbumString += '<h5 class="card-title">Id: ' + album.id + '</h5>'
+        AlbumString += '<p class="card-text">' + album.title + '</p>'
+        AlbumString += '</div>'
+        AlbumString += '</div>'
+        productsDV.innerHTML += AlbumString
+      }
+    </script>
+  </body>
+</html>
