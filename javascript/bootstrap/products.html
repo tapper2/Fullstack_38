@@ -21,9 +21,20 @@
       .rowDV {
         padding: 20px;
       }
+
+      .cardTitle {
+        height: 70px;
+      }
     </style>
   </head>
   <body>
+    <!-- <div class="container row">
+      <div class="d1 col-3">1</div>
+      <div class="d2 col-3">2</div>
+      <div class="d3 col-3">3</div>
+      <div class="d4 col-3">4</div>
+    </div> -->
+
     <script src="../json/posts.js"></script>
     <script>
       var Container = '<div class="containerCl" id="containrDV"></div>'
@@ -31,7 +42,8 @@
 
       containrDV.innerHTML += '<div class="rowDV"> This is header </div><hr>'
       containrDV.innerHTML += '<div class="rowDV"> This is Buttons </div><hr>'
-      containrDV.innerHTML += '<div class="rowDV" id="productsDV">  </div><hr>'
+      containrDV.innerHTML +=
+        '<div class="rowDV row" id="productsDV">  </div><hr>'
       containrDV.innerHTML += '<div class="rowDV"> This is Footer </div><hr>'
 
       for (var i = 0; i < albums.length; i++) {
@@ -40,13 +52,17 @@
 
       function BuildAlbum(album) {
         var AlbumString = ''
+        AlbumString += '<div class="col-3">'
         AlbumString +=
-          '<div class="card" style="width: 18rem; margin: 10px; border: 1px solid gray">'
+          '<div class="card" style="border: 1px solid gray; margin-top:10px">'
         AlbumString +=
-          '<img src="' + album.url + '" class="card-img-top" title="123455" />'
+          '<img src="' +
+          album.url +
+          '" class="card-img-top" title="123455" style="width:100% !important" />'
         AlbumString += '<div class="card-body">'
         AlbumString += '<h5 class="card-title">Id: ' + album.id + '</h5>'
-        AlbumString += '<p class="card-text">' + album.title + '</p>'
+        AlbumString += '<p class="card-text cardTitle">' + album.title + '</p>'
+        AlbumString += '</div>'
         AlbumString += '</div>'
         AlbumString += '</div>'
         productsDV.innerHTML += AlbumString
