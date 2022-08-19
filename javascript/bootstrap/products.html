@@ -54,7 +54,7 @@
         var AlbumString = ''
         AlbumString += '<div class="col-3">'
         AlbumString +=
-          '<div class="card" style="border: 1px solid gray; margin-top:10px">'
+          '<div class="card" style="border: 1px solid gray; margin-top:10px; cursor:pointer" onclick="imgclicked()">'
         AlbumString +=
           '<img src="' +
           album.url +
@@ -66,6 +66,10 @@
         AlbumString += '</div>'
         AlbumString += '</div>'
         productsDV.innerHTML += AlbumString
+      }
+
+      function imgclicked() {
+        ///console id , title , url of image
       }
     </script>
   </body>
