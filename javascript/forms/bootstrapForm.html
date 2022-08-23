@@ -30,12 +30,12 @@
 
     <div class="row p-5 ">
         <div class="col-8 formBorder rowcontainer">
-            <form>
+            <form id="formEL">
 
 
                 <div class="form-group">
-                  <label for="mailInput">Email address</label>
-                  <input type="text" class="form-control" id="mailInput"  placeholder="Enter email" >
+                  <label for="mailInputDV">Email address</label>
+                  <input type="text" class="form-control" id="mailInputDV"  placeholder="Enter email" >
 
 
                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -44,8 +44,8 @@
 
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="passwordInputDV">Password</label>
+                  <input type="password" class="form-control" id="passwordInputDV" placeholder="Password">
                 </div>
 
 
@@ -60,8 +60,8 @@
 
 
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  <input type="checkbox" class="form-check-input" id="Check1">
+                  <label class="form-check-label" for="Check1">Check me out</label>
                 </div>
 
 
@@ -73,9 +73,22 @@
     
 
     <script>
+    
+        var users = [];
+
         function onSubmit(){
-            var mail =  document.getElementById('mailInput').value
-            console.log(mail);
+            var mailInput = "";
+            var user = {
+                mail:mailInputDV.value,
+                password:passwordInputDV.value,
+                check:Check1.checked
+            };
+
+            users.push(user)
+            //user.mail = document.getElementById('mailInput').value;
+            //user.password = document.getElementById('passwordInput').value;
+            console.log(users);
+            formEL.reset();
         }
     </script>
 </body>
