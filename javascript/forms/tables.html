@@ -12,51 +12,64 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous"
   />
-
   <script src="../json/posts.js"></script>
 </head>
 <body>
+    <button type="button" class="btn btn-primary mt-3 m-3" onclick="ShowHideTable()">Show/Hide Table</button>
     <div class="row">
         <div class="col-12 p-5">
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Phone</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">UserID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
                   </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
+                   
                 </tbody>
               </table>
 
 
               <script>
                 console.log(posts)
+                var flag = true;
+
+                function printLoop(){
+                    for(var i=0;i<posts.length;i++){
+                        printSinglePost(posts[i]);
+                    }
+                }
+               
+                function printSinglePost(post){
+                    tableBody.innerHTML += `<tr>
+                        <td class="">${post.id}</td>
+                        <td>${post.userId}</td>
+                        <td>${post.title}</td>
+                        <td>${post.body}</td>
+                    </tr>`
+                }
+
+                function ShowHideTable(){
+                    if(flag){
+                        printLoop()
+                    }else {
+                        tableBody.innerHTML = '';
+                    }
+
+                    flag = !flag;
+
+                    // if(flag == true) {
+                    //     flag = false
+                    // }else {
+                    //     flag = true
+                    // }
+                }
+
+
               </script>
-              <!-- <table class="table">
-                <thead>
-                    <tr>
-                        <td>Name</td>
-                        <td>Mail</td>
-                        <td>Phone</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>shay</td>
-                        <td>s@gmail.com</td>
-                        <td>123456</td>
-                    </tr>
-                </tbody>
-              </table> -->
         </div>
     </div>
    
