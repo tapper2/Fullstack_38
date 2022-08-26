@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form HW</title>
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+    <style>
+        #mainForm{
+            border: 1px solid gray;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row p-5">
+        <div class="col-12 p-5">
+            <form id="mainForm">
+                <!-- Name Input -->
+                <div class="form-group mt-3">
+                    <label for="nameDV">Enter Name :</label>
+                    <input type="text" class="form-control" id="nameDV"  placeholder="Enter name" >
+                </div>
+
+                <!-- mail Input -->
+                <div class="form-group mt-3">
+                    <label for="mailDV">Email address : </label>
+                    <input type="text" class="form-control" id="mailDV"  placeholder="Enter email" >
+                </div>
+ 
+                <!-- Phone Input -->
+                <div class="form-group mt-3">
+                    <label for="phoneDV">Enter Phone : </label>
+                    <input type="number" class="form-control" id="phoneDV"  placeholder="Enter phone" >
+                </div>
+
+                <!-- Submit button -->
+                <button type="button" class="btn btn-primary mt-3" onclick="onSubmit()">Submit</button>
+
+                <!-- Print button -->
+                <button type="button" class="btn btn-primary mt-3" onclick="onPrint()">Print</button>
+            </form>
+
+            <div id="printData">
+                <!-- Print data from js -->
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var users = [];
+
+        function onSubmit(){
+            var user = {
+                name:nameDV.value,
+                mail:mailDV.value,
+                phone:phoneDV.value,
+            }
+            users.push(user);
+            
+            // console.log(user1 , user2)
+            // var user1 = {
+            //     name:"abc",
+            //     phone:12345,
+            // } 
+
+            // user1.phone1 = 34567;
+            // var user2 = {}
+            // user2.name = "abc";
+            // user2.phone = 12345
+
+            //nameDV ==========   document.getElementById('nameDV').value;
+            //var user = {}
+            // user.name = nameDV.value;
+            // user.mail = mailDV.value;
+            // user.phone = phoneDV.value;
+        }
+
+        function onPrint(){
+            
+            for(var i=0;i<users.length;i++){
+                //printSingleUser(users[i])
+
+                var user = users[i];
+
+                var userPrint = `<hr/>
+                    <div>
+                        <div>Name : ${user.name}</div>
+                        <div>Mail : ${user.mail}</div>
+                        <div>Phone : ${user.phone}</div>
+                    </div>`
+
+                    printData.innerHTML += userPrint
+            }
+        }
+
+        function printSingleUser(user){
+            var user = `<hr/>
+            <div>
+                <div>Name : ${user.name}</div>
+                <div>Mail : ${user.mail}</div>
+                <div>Phone : ${user.phone}</div>
+            </div>`
+
+            printData.innerHTML += user
+        }
+
+    </script>
+</body>
+</html>

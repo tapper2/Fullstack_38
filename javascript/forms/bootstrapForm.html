@@ -31,14 +31,9 @@
     <div class="row p-5 ">
         <div class="col-8 formBorder rowcontainer">
             <form id="formEL">
-
-
                 <div class="form-group">
                   <label for="mailInputDV">Email address</label>
                   <input type="text" class="form-control" id="mailInputDV"  placeholder="Enter email" >
-
-
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
 
 
@@ -83,13 +78,15 @@
                 password:passwordInputDV.value,
                 check:Check1.checked
             };
-
+          
             users.push(user)
             //user.mail = document.getElementById('mailInput').value;
             //user.password = document.getElementById('passwordInput').value;
             console.log(users);
             formEL.reset();
         }
+      
     </script>
+
 </body>
 </html>
