@@ -26,14 +26,22 @@ function printUsersSingleUserToTable(user){
 }
 
 function printUsersToTableByArray(){
-    tableDV.innerHTML = '';
+    tableBody.innerHTML = '';
 
     for(var i=0;i<users.length;i++){
-        tableDV.innerHTML += `
-        <div>${users[i].name}</div>
-        <div>${users[i].mail}</div>
-        <div>${users[i].phone}</div>
-        <div>${users[i].city}</div>
-    `;
+        console.log(users[i])
+        let u = users[i];
+        tableBody.innerHTML += `
+        <tr>
+            <td scope="col">${users[i].name}</td>
+            <td scope="col">${users[i].mail}</td>
+            <td scope="col">${users[i].phone}</td>
+            <td scope="col">${users[i].city}</td>
+            <td> <button type="button" class="btn btn-primary mt-3" onclick="showDetails(${i})">הצג פרטים</button></td>
+        </tr>`;
     }
+}
+
+function showDetails(i){
+   console.log(users[i])
 }

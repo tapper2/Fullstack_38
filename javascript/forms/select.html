@@ -11,6 +11,12 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous"
   />
+  <style>
+    .table{
+        text-align: right;
+        direction: rtl;
+    }
+  </style>
 </head>
 <body>
 
@@ -49,7 +55,20 @@
             </form>
         </div>
         <div class="col-8 p-5" id="tableDV">
-           
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">שם </th>
+                    <th scope="col">מייל</th>
+                    <th scope="col">טלפון </th>
+                    <th scope="col">עיר </th>
+                    <th scope="col"> הצג פרטים </th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                   
+                </tbody>
+              </table>
         </div>
     </div>
 
