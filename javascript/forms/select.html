@@ -13,11 +13,47 @@
   />
 </head>
 <body>
-    <select class="form-select" aria-label="Default select example" id="citySelect">
-        <option value="0" selected>Open this select menu</option>
-        <option value="tel aviv">One</option>
-        <option value="haifa">Two</option>
-        <option value="eilat">Three</option>
-    </select>
+
+    <div class="row p-5">
+        <div class="col-4 p-5">
+            <form id="mainForm">
+                <!-- Name Input -->
+                <div class="form-group mt-3">
+                    <label for="nameDV">Enter Name :</label>
+                    <input type="text" class="form-control" id="nameDV"  placeholder="Enter name" >
+                </div>
+
+                <!-- mail Input -->
+                <div class="form-group mt-3">
+                    <label for="mailDV">Email address : </label>
+                    <input type="text" class="form-control" id="mailDV"  placeholder="Enter email" >
+                </div>
+ 
+                <!-- Phone Input -->
+                <div class="form-group mt-3">
+                    <label for="phoneDV">Enter Phone : </label>
+                    <input type="number" class="form-control" id="phoneDV"  placeholder="Enter phone" >
+                </div>
+
+                <!-- City Input -->
+                <label for="cityDV" class="mt-3">Enter city : </label>
+                <select class="form-select" aria-label="Default select example" id="cityDV">
+                    <option value="0" selected>Open this select menu</option>
+                    <option value="tel aviv">tel aviv</option>
+                    <option value="haifa">haifa</option>
+                    <option value="eilat">eilat</option>
+                </select>
+                
+                <!-- Submit button -->
+                <button type="button" class="btn btn-primary mt-3" onclick="onSubmit()">Submit</button>
+            </form>
+        </div>
+        <div class="col-8 p-5" id="tableDV">
+           
+        </div>
+    </div>
+
+    <script src="select.js"></script>
+   
 </body>
 </html>
