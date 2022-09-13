@@ -9,19 +9,37 @@
   </head>
   <body>
     <script>
+      var url = 'https://jsonplaceholder.typicode.com/users'
+      var comments = []
+
       $.ajax({
         type: 'GET',
         datatype: 'json',
         url: url,
         success: function (data) {
-          console.log('Data : ', data)
-          shows = data
-          buildShows()
+          comments = data
+          printComments()
         },
         error: function (error) {
           console.log('error : ', error)
         },
       })
+
+      function printComments() {
+        console.log(comments)
+      }
+
+      //   console.log('Timout1')
+      //   var i = 0
+      //   var timeout = setTimeout(showtimeoutTime, 0)
+
+      //   function showtimeoutTime() {
+      //     console.log('Timout2')
+      //     console.log(i)
+      //     i++
+      //   }
+
+      //   console.log('Timout3')
     </script>
   </body>
 </html>
