@@ -9,7 +9,21 @@
   </head>
   <body>
     <script>
-      var url = 'https://jsonplaceholder.typicode.com/users'
+      //קראו לכתובת בשרת לפי הערך במשתנה NUM
+      // 1 = posts 'https://jsonplaceholder.typicode.com/posts'
+      // 2 = comments 'https://jsonplaceholder.typicode.com/comments'
+      // 3 = albums 'https://jsonplaceholder.typicode.com/albums'
+      // 4 = photos 'https://jsonplaceholder.typicode.com/photos'
+      // 5 = todos 'https://jsonplaceholder.typicode.com/todos'
+      // 6 = users 'https://jsonplaceholder.typicode.com/users'
+      //בנו 6 כפתורים ב HTML
+      //כל כפתור יעביר אותנו לכתובת בהתאם למערך )0-6
+
+      var urls = ['posts', 'comments', 'albums', 'photos', 'todos', 'users']
+      var baseUrl = 'https://jsonplaceholder.typicode.com/'
+      var num = 2
+
+      var url = baseUrl + urls[num]
       var comments = []
 
       $.ajax({
