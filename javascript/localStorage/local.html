@@ -9,13 +9,28 @@
   <body>
     <div id="container"></div>
     <script>
-      // localStorage.firstName = 'shay'
+      var name = 'shay'
+      //  localStorage.firstName = name
+      //localStorage.myCat = 'Tom'
+      //localStorage.setItem('myCat', 'Tomy')
+
+      //const cat = localStorage.getItem('myCat');
+      //var cat = localStorage.myCat
+
+      var name1 = localStorage.firstName
+
       // localStorage.lastName = 'lousky'
-
-      // var arr = [1, 2, 3, 4, 5, 6, 7]
       // localStorage.arr = JSON.stringify(arr)
+      // var arr = [1, 2, 3, 4, 5, 6, 7]
+      // localStorage.setItem('arr', JSON.stringify(arr))
 
-      var arr = localStorage.arr //JSON.parse(localStorage.arr)
+      var arr = JSON.parse(localStorage.getItem('arr'))
+      //arr = JSON.parse(arr)
+
+      console.log('ARR : ', arr)
+      //arr = JSON.parse(arr1)
+
+      // var arr = localStorage.arr //JSON.parse(localStorage.arr)
       console.log('Arr : ', arr)
     </script>
   </body>

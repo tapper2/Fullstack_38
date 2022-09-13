@@ -34,9 +34,16 @@
 
     <script>
       var names = []
+      var user = null
+
+      if (user) {
+        console.log('USER ')
+      }
+
       //["111","222","333","999","888"]
       if (localStorage.names) {
-        names = JSON.parse(localStorage.names)
+        //names = JSON.parse(localStorage.names)
+        names = JSON.parse(localStorage.getItem('names'))
         printArraytoHtml()
       }
 
@@ -44,7 +51,8 @@
         // var name = nameDV.value
         names.push(nameDV.value)
         nameDV.value = ''
-        localStorage.names = JSON.stringify(names)
+        //localStorage.names = JSON.stringify(names)
+        localStorage.setItem('names', JSON.stringify(names))
         printArraytoHtml()
         console.log(names)
       }
