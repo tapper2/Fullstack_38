@@ -5,9 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
     <title>Ajax</title>
   </head>
   <body>
+    <div class="row p-3">
+      <div class="col-1">
+        <button
+          type="button"
+          class="btn btn-primary mt-3"
+          onclick="urlClicked(0)"
+        >
+          Posts
+        </button>
+      </div>
+      <div class="col-1">
+        <button
+          type="button"
+          class="btn btn-primary mt-3"
+          onclick="urlClicked(1)"
+        >
+          Comments
+        </button>
+      </div>
+      <div class="col-1">
+        <button
+          type="button"
+          class="btn btn-primary mt-3"
+          onclick="urlClicked(2)"
+        >
+          Albums
+        </button>
+      </div>
+      <div class="col-1">
+        <button
+          type="button"
+          class="btn btn-primary mt-3"
+          onclick="urlClicked(3)"
+        >
+          Photos
+        </button>
+      </div>
+      <div class="col-1">
+        <button
+          type="button"
+          class="btn btn-primary mt-3"
+          onclick="urlClicked(4)"
+        >
+          Todos
+        </button>
+      </div>
+      <div class="col-1">
+        <button
+          type="button"
+          class="btn btn-primary mt-3"
+          onclick="urlClicked(5)"
+        >
+          Users
+        </button>
+      </div>
+    </div>
     <script>
       //קראו לכתובת בשרת לפי הערך במשתנה NUM
       // 1 = posts 'https://jsonplaceholder.typicode.com/posts'
@@ -17,27 +81,32 @@
       // 5 = todos 'https://jsonplaceholder.typicode.com/todos'
       // 6 = users 'https://jsonplaceholder.typicode.com/users'
       //בנו 6 כפתורים ב HTML
-      //כל כפתור יעביר אותנו לכתובת בהתאם למערך )0-6
+      //כל כפתור יעביר אותנו לכתובת בהתאם למערך )0-5
 
       var urls = ['posts', 'comments', 'albums', 'photos', 'todos', 'users']
       var baseUrl = 'https://jsonplaceholder.typicode.com/'
-      var num = 2
-
-      var url = baseUrl + urls[num]
       var comments = []
+      var url = ''
 
-      $.ajax({
-        type: 'GET',
-        datatype: 'json',
-        url: url,
-        success: function (data) {
-          comments = data
-          printComments()
-        },
-        error: function (error) {
-          console.log('error : ', error)
-        },
-      })
+      function urlClicked(num) {
+        url = baseUrl + urls[num]
+        getDataFromServer(url)
+      }
+
+      function getDataFromServer(url) {
+        $.ajax({
+          type: 'GET',
+          datatype: 'json',
+          url: url,
+          success: function (data) {
+            comments = data
+            printComments()
+          },
+          error: function (error) {
+            console.log('error : ', error)
+          },
+        })
+      }
 
       function printComments() {
         console.log(comments)
