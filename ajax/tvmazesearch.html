@@ -24,8 +24,8 @@
     <div id="showContainer" class="row"></div>
     <script>
       var shows = []
-      var url = 'http://api.tvmaze.com/shows'
-      //var url = 'https://api.tvmaze.com/search/shows?q=girls'
+      //var url = 'http://api.tvmaze.com/shows'
+      var url = 'https://api.tvmaze.com/search/shows?q=hero'
       $.ajax({
         type: 'GET',
         datatype: 'json',
@@ -40,9 +40,15 @@
       })
 
       function printShows() {
-        console.log(shows)
+        // console.log(shows)
         for (var i = 0; i < shows.length; i++) {
-          printShow(shows[i])
+          //   console.log(shows[i])
+          //   var s = {
+          //     score: 1,
+          //     show: { image, name, summary },
+          //   }
+          //   printShow(s.show)
+          printShow(shows[i].show)
         }
       }
 
