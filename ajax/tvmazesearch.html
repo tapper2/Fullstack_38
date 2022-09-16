@@ -21,38 +21,84 @@
     </style>
   </head>
   <body>
+    <div class="p-3 row">
+      <div class="form-group col-11">
+        <input
+          type="text"
+          class="form-control"
+          id="showInputDV"
+          placeholder="Enter Show"
+        />
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary col-1"
+        onclick="onSubmit(showInputDV.value)"
+      >
+        Submit
+      </button>
+    </div>
+
     <div id="showContainer" class="row"></div>
     <script>
       var shows = []
-      //var url = 'http://api.tvmaze.com/shows'
-      var url = 'https://api.tvmaze.com/search/shows?q=hero'
-      $.ajax({
-        type: 'GET',
-        datatype: 'json',
-        url: url,
-        success: function (data) {
-          shows = data
-          printShows()
-        },
-        error: function (error) {
-          console.log('error : ', error)
-        },
-      })
+      var urlShowAll = 'http://api.tvmaze.com/shows/12345'
+      var url = 'https://api.tvmaze.com/search/shows?q='
+      
+      //var id = new URLSearchParams(window.location.search).get('id')
+      //console.log('ID : ', id, window.location.search)
+      //onSubmit('girls')
+      showAll()
+
+      function onSubmit(val) {
+        console.log('SUBMIT : ', val)
+        showContainer.innerHTML = ''
+        var userInputValue = showInputDV.value
+
+        $.ajax({
+          type: 'GET',
+          datatype: 'json',
+          url: 'https://api.tvmaze.com/search/shows?q=' + val,
+          success: function (data) {
+            shows = data
+            printShows()
+          },
+          error: function (error) {
+            console.log('error : ', error)
+          },
+        })
+      }
+
+      function showAll() {
+        $.ajax({
+          type: 'GET',
+          datatype: 'json',
+          url: 'http://api.tvmaze.com/shows',
+          success: function (data) {
+            shows = data
+            printShowsAll()
+          },
+          error: function (error) {
+            console.log('error : ', error)
+          },
+        })
+      }
+
+      function printShowsAll() {
+        for (var i = 0; i < shows.length; i++) {
+          printShow(shows[i])
+        }
+      }
 
       function printShows() {
-        // console.log(shows)
         for (var i = 0; i < shows.length; i++) {
-          //   console.log(shows[i])
-          //   var s = {
-          //     score: 1,
-          //     show: { image, name, summary },
-          //   }
-          //   printShow(s.show)
           printShow(shows[i].show)
         }
       }
 
       function printShow(show) {
+        console.log('SHOW : ', show)
         // showContainer.innerHTML += `<div>${show.name}</div>`
         // showContainer.innerHTML += `<hr/>`
         showContainer.innerHTML += `
@@ -83,6 +129,8 @@
 </html>
 
 <!-- 
+
+    https://api.tvmaze.com/singlesearch/shows?q=Paper Girls
 "id": 1,
 "url": "https://www.tvmaze.com/shows/1/under-the-dome",
 "name": "Under the Dome",
