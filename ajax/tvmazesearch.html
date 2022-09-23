@@ -18,6 +18,10 @@
         height: 200px;
         overflow: auto;
       }
+
+      .detailsBTN {
+        margin-top: 30px;
+      }
     </style>
   </head>
   <body>
@@ -43,9 +47,9 @@
     <div id="showContainer" class="row"></div>
     <script>
       var shows = []
-      var urlShowAll = 'http://api.tvmaze.com/shows/12345'
+      var urlShowAll = 'http://api.tvmaze.com/shows'
       var url = 'https://api.tvmaze.com/search/shows?q='
-      
+
       //var id = new URLSearchParams(window.location.search).get('id')
       //console.log('ID : ', id, window.location.search)
       //onSubmit('girls')
@@ -59,7 +63,7 @@
         $.ajax({
           type: 'GET',
           datatype: 'json',
-          url: 'https://api.tvmaze.com/search/shows?q=' + val,
+          url: url + val,
           success: function (data) {
             shows = data
             printShows()
@@ -74,7 +78,7 @@
         $.ajax({
           type: 'GET',
           datatype: 'json',
-          url: 'http://api.tvmaze.com/shows',
+          url: urlShowAll,
           success: function (data) {
             shows = data
             printShowsAll()
@@ -98,7 +102,7 @@
       }
 
       function printShow(show) {
-        console.log('SHOW : ', show)
+        // console.log('SHOW : ', show)
         // showContainer.innerHTML += `<div>${show.name}</div>`
         // showContainer.innerHTML += `<hr/>`
         showContainer.innerHTML += `
@@ -118,6 +122,9 @@
             <div class="summeryDV">
               ${show.summary}
             </div>
+            <a href="singleShow.html?id=${show.id}" target="_blank">
+              <button type="button" class="btn btn-primary detailsBTN" > פרטים נוספים</button>
+            <a/>
           </div>
         </div>
       </div>`

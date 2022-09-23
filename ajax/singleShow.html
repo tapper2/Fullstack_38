@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>SingleShow</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="showContainer"></div>
+    <script>
+      ///135
+      var selectedShowID = new URLSearchParams(window.location.search).get('id')
+      var urlSingleShow = 'http://api.tvmaze.com/shows/' + selectedShowID
+      var singleShow = {}
+
+      $.ajax({
+        type: 'GET',
+        datatype: 'json',
+        url: urlSingleShow,
+        success: function (data) {
+          singleShow = data
+          printShow(singleShow)
+        },
+        error: function (error) {
+          console.log('error : ', error)
+        },
+      })
+
+      function printShow(show) {
+        console.log('SHOW : ', singleShow)
+        // showContainer.innerHTML += `<div>${show.name}</div>`
+        // showContainer.innerHTML += `<hr/>`
+        showContainer.innerHTML += `
+          <div class="col-3">
+        <div
+          class="card"
+          style="margin: 10px; border: 1px solid gray"
+        >
+          <img
+            src="${show.image.medium}"
+            class="card-img-top"
+            alt="..."
+          />
+
+          <div class="card-body">
+            <h5 class="card-title">${show.name}</h5>
+            <div class="summeryDV">
+              ${show.summary}
+            </div>
+            <a href="singleShow.html?id=${show.id}" target="_blank">
+              <button type="button" class="btn btn-primary detailsBTN" > פרטים נוספים</button>
+            <a/>
+          </div>
+        </div>
+      </div>`
+      }
+      console.log('ID : ', selectedShowID)
+    </script>
+  </body>
+</html>
