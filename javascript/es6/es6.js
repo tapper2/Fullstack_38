@@ -149,8 +149,7 @@ let postsID = posts.map((p) => {
 //     arr3.push(post);
 // }
 
-let postsFilter = posts.filter((p, i) => {
-  p.index = i
+let postsFilter = posts.filter((p) => {
   return p.id == 20 || p.id == 30
 })
 
@@ -204,4 +203,27 @@ let resultStart = str1.startsWith('abcd')
 let resultInclude = str1.includes('abcd')
 let resultEnd = str1.endsWith('abcd')
 
-console.log(resultStart, resultInclude, resultEnd)
+//console.log(resultStart, resultInclude, resultEnd)
+
+//כתוב פונקציה המקבלת 3 פרמטרים
+// titleStartWidth : string , bodyEndWidth : string , Id:int
+
+//מחזירה מערך של הפוסטים אשר או
+//title start width titleStartWidth
+//body end width bodyEndWidth
+//Id = Id;
+
+let filterFunction = (titleStartWidth, bodyEndWidth, id) => {
+  let arr = posts.filter((p) => {
+    return (
+      p.title.startsWith(titleStartWidth) ||
+      p.body.endsWith(bodyEndWidth) ||
+      p.id == id
+    )
+  })
+
+  return arr
+}
+
+let filterResult = filterFunction('zxcvxcfcfcg', 'sunt', 20)
+console.log(filterResult)
