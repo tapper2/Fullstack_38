@@ -161,7 +161,7 @@ let postsFilter1 = posts.filter((p, counter) => {
   }
 })
 
-console.log(postsFilter1)
+//console.log(postsFilter1)
 
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
@@ -183,12 +183,25 @@ let postsFindIndex = posts.findIndex((p) => {
   return p.id == 20
 })
 
-console.log(postsFind, posts, postsFindIndex)
+//console.log(postsFind, posts, postsFindIndex)
 
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
-/////////////////    StartEnd With  ///////////////////////////////
+/////////////////    Start End With  ///////////////////////////////
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 
-let strStart = 'asdasdasfdsg klsdflkds dsfkljsdkf'
+let str = 'abcd klsdflkds dsfkljsdkf'
+let str1 = 'abcd'
+
+// if (str[0] == 'a' && str[1] == 'b') {
+//   console.log(true)
+// } else {
+//   console.log(false)
+// }
+
+let resultStart = str1.startsWith('abcd')
+let resultInclude = str1.includes('abcd')
+let resultEnd = str1.endsWith('abcd')
+
+console.log(resultStart, resultInclude, resultEnd)
