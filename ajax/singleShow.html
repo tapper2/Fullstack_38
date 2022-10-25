@@ -23,7 +23,7 @@
     <script>
       ///135
       var selectedShowID = new URLSearchParams(window.location.search).get('id')
-      var urlSingleShow = 'http://api.tvmaze.com/shows/' + selectedShowID
+      var urlSingleShow = 'http://api.tvmaze.com/shows' ///' + selectedShowID
       var singleShow = {}
 
       $.ajax({

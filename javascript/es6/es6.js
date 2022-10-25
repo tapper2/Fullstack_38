@@ -18,8 +18,12 @@ let num3 = 30
 if (num > 8) {
   let num1 = 30
   var num2 = 50
-  //console.log(num1)
+  var num2 = 20
+  num2 = 10
+  num1 = 5
 }
+
+console.log(num2, num2)
 
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
@@ -46,6 +50,9 @@ for (let p of posts) {
   i++
 }
 
+// let random = getRandomNumber();
+//console.log(random)
+
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 /////////////////    Arrow function   //////////////////
@@ -59,7 +66,7 @@ function fn(num) {
 
 //es6
 let fn1 = (num = 10) => {
-  //console.log('Hello fn : ', num)
+  console.log('Hello fn : ', num)
 }
 
 let function2 = () => {}
@@ -110,6 +117,13 @@ let user1 = { ...user }
 user1.mail = 'a@gmail.com'
 //console.log(user, user1)
 
+let a1 = [1, 2, 3]
+let a2 = [...a1]
+a2.push(4)
+a1.push(7)
+
+console.log(a1, a2)
+
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 /////////////////   Map      ////////////////////////////
@@ -124,9 +138,17 @@ user1.mail = 'a@gmail.com'
 //   console.log(p)
 // }
 
-let newPost = posts.map((p) => {
-  return p
-})
+// let newPost = posts.map((p,i) => {
+//   console.log(p)
+
+//   let o = {
+//     name:p.name,
+//     id:p.id,
+//     index:i,
+//   }
+
+//   return o;
+// })
 
 //let postsID = posts.map(p =>  p.title)
 
@@ -149,9 +171,17 @@ let postsID = posts.map((p) => {
 //     arr3.push(post);
 // }
 
-let postsFilter = posts.filter((p) => {
-  return p.id == 20 || p.id == 30
+let a = []
+
+let f = () => {
+  return '123'
+}
+
+let postsFilter = posts.filter((p, i) => {
+  return p.id >= 20 && p.id <= 30 //p.id == 20 || p.id == 30
 })
+
+console.log('postsFilter : ', postsFilter)
 
 let postsFilter1 = posts.filter((p, counter) => {
   if (p.id == 20 || p.id == 30) {
@@ -175,8 +205,10 @@ let postsFilter1 = posts.filter((p, counter) => {
 // }
 
 let postsFind = posts.find((p) => {
-  return p.id == 30 || p.id == 20
+  return p.id >= 20 && p.id <= 30
 })
+
+console.log('postsFind : ', postsFind)
 
 let postsFindIndex = posts.findIndex((p) => {
   return p.id == 20
@@ -227,3 +259,5 @@ let filterFunction = (titleStartWidth, bodyEndWidth, id) => {
 
 let filterResult = filterFunction('zxcvxcfcfcg', 'sunt', 20)
 console.log(filterResult)
+
+
