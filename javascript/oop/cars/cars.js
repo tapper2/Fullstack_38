@@ -25,17 +25,34 @@ class Car {
   }
 }
 
-let mazda = new Car(1, 'Mazda', 90000, 2022)
-let honda = new Car(2, 'Honda', 98000, 2021)
-CarsArray[(mazda, honda)]
+function onSubmit() {
+  let car = new Car(id, nameDV.value, priceDV.value, yearDV.value)
+  CarsArray.push(car)
+  console.log(CarsArray)
+  id++
+}
 
-let searchId = 2
-let date = '20/10/2022'
-let km = '50,000'
+function addServiceToCar() {
+  let id = idDV.value
+
+  let carObject = CarsArray.find((car) => id == car.id)
+  carObject.setService(dateDV.value, kmDV.value)
+  console.log(CarsArray)
+}
+
+// let mazda = new Car(1, 'Mazda', 90000, 2022)
+// let honda = new Car(2, 'Honda', 98000, 2021)
+// CarsArray.push(mazda)
+// CarsArray.push(honda)
+// CarsArray[mazda, honda]
+
+// let searchId = 908-65-894
+// let date = '20/10/2022'
+// let km = '50,000'
 
 //let car =  CarsArray.find()
 
-console.log(mazda, honda)
+//console.log(mazda, honda)
 
 //let carService = []
 
@@ -51,9 +68,10 @@ console.log(mazda, honda)
 
 //[('20/10/2022', '50,000', '26/10/2022', '58,000')]
 
-// function onSubmit() {
-//   let car = new Car(id, nameDV.value, priceDV.value, yearDV.value)
-//   CarsArray.push(car)
-//   console.log(CarsArray)
-//   id++
-// }
+
+///  בנה מחלקה של סטודנט
+//  הוסף פרמטרים לפי הצרכים
+// הוסף פונקצייה המקבלת תאריך + נוכחות
+// הוסף פונקצייה המקבלת שם מבחן + ציון + תאריך
+
+

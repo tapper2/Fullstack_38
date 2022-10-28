@@ -51,6 +51,47 @@
       </button>
     </form>
 
+    <form class="p-5 mt-5">
+      <div class="form-group mt-2">
+        <label for="exampleInputEmail1">ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="idDV"
+          aria-describedby="emailHelp"
+          placeholder="Enter car brand"
+        />
+      </div>
+      <div class="form-group mt-2">
+        <label for="exampleInputEmail1">DATE</label>
+        <input
+          type="number"
+          class="form-control"
+          id="dateDV"
+          aria-describedby="emailHelp"
+          placeholder="Enter year"
+        />
+      </div>
+      <div class="form-group mt-2">
+        <label for="exampleInputEmail1">KM</label>
+        <input
+          type="number"
+          class="form-control"
+          id="kmDV"
+          aria-describedby="emailHelp"
+          placeholder="Enter price"
+        />
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary mt-2"
+        onclick="addServiceToCar()"
+      >
+        Submit
+      </button>
+    </form>
+
     <script src="cars.js"></script>
   </body>
 </html>
