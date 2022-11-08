@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --color-bg: #eaeaea;
+        --color-loader: #222;
+        --loader-size: 100px;
+        --loader-speed: 500ms;
+      }
+
+      .loader {
+        --loader-height: calc(var(--loader-size) / 7);
+        display: flex;
+
+        position: relative;
+      }
+      .loader::before {
+        content: '';
+        position: absolute;
+      }
+      .loader::before,
+      .loader > span {
+        display: block;
+        width: var(--loader-height);
+        height: var(--loader-height);
+        border-radius: 50%;
+        background: var(--color-loader);
+
+        animation-name: to-right;
+        animation-duration: var(--loader-speed);
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .loader > span:nth-child(even) {
+        visibility: hidden;
+      }
+      .loader > span:first-child {
+        animation-name: scale-up;
+      }
+      .loader > span:last-child {
+        animation-name: scale-up;
+        animation-direction: reverse;
+      }
+
+      @keyframes to-right {
+        to {
+          transform: translateX(200%);
+        }
+      }
+      @keyframes scale-up {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      body {
+        background-color: var(--color-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader" id="myLoader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <script>
+      //myLoader.style.display = 'none'
+      //myLoader.style.display = 'block'
+    </script>
+  </body>
+</html>

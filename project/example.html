@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      let selectedCoins = [
+        {
+          id: 'bitcoin',
+          symbol: 'btc',
+          name: 'Bitcoin',
+          block_time_in_minutes: '10.0',
+          checked: false,
+        },
+      ]
+
+      let coins = [
+        {
+          id: 'bitcoin',
+          symbol: 'btc',
+          name: 'Bitcoin',
+          block_time_in_minutes: '10.0',
+          checked: true,
+        },
+        {
+          id: 'btc',
+          symbol: 'btc',
+          name: 'Bitcoin',
+          block_time_in_minutes: '10.0',
+          checked: false,
+        },
+      ]
+
+      coins = coins.map((coin) => {
+        coin.checked = false
+      })
+
+      for (let i = 0; i < selectedCoins.length; i++) {
+        let selectedCoin = coins.find((c) => c.id == selected[i].id)
+        selectedCoin.checked = true
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!--PARALEX EXAMPLE =  https://codepen.io/cgrkzlkn/pen/yLjzPmp -->
